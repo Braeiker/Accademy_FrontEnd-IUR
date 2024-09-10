@@ -1,0 +1,141 @@
+﻿@using IUR.Models
+@inject IJSRuntime JsRuntime
+@inject NavigationManager Navigation
+
+<form class="form">
+    <span class="input-span">
+        <label for="email" class="label">Email</label>
+        <input type="email" name="email" id="email" @bind="inputEmail" />
+    </span>
+    <span class="input-span">
+        <label for="password" class="label">Password</label>
+        <input type="password" name="password" id="password" @bind="Password" />
+    </span>
+    <span class="span"><a href="#">Forgot password?</a></span>
+    <input class="submit" type="button" value="Log in" @onclick="LoginLogic" />
+    <span class="span">
+        Don't have an account?
+        <NavLink class="nav-link" href="/Register" Match="NavLinkMatch.All">Sign up</NavLink>
+    </span>
+</form>
+
+@code {
+
+    private string? inputEmail;
+
+
+    private string Email { get; set; }
+    private string Password { get; set; }
+
+    [Parameter]
+    public EventCallback<string> InputEmail { get; set; }
+
+    public async void LoginLogic()
+    {
+        await InputEmail.InvokeAsync(inputEmail);
+
+
+
+
+
+        // // if (string.IsNullOrEmpty(Email) || string.IsNullOrEmpty(Password))
+        // // {
+        // //     await JsRuntime.InvokeVoidAsync("alert", "Please fill in all fields");
+        // // }
+        // // else
+        // // {
+
+        // //     Navigation.NavigateTo("/Account");
+        // // }
+    }
+}
+
+<style>
+    .form {
+        --bg-light: #efefef;
+        --bg-dark: #707070;
+        --clr: #58bc82;
+        --clr-alpha: #9c9c9c60;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        width: 100%;
+        max-width: 300px;
+    }
+
+        .form .input-span {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .form input[type="email"],
+        .form input[type="password"] {
+            border-radius: 0.5rem;
+            padding: 1rem 0.75rem;
+            width: 100%;
+            border: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background-color: var(--clr-alpha);
+            outline: 2px solid var(--bg-dark);
+            color: #white
+        }
+
+            .form input[type="email"]:focus,
+            .form input[type="password"]:focus {
+                outline: 2px solid#white
+            }
+
+    label.label {
+        color: white;
+    }
+
+    .label {
+        align-self: flex-start;
+        color: #white font-weight: 600;
+    }
+
+    .form .submit {
+        padding: 1rem 0.75rem;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        border-radius: 3rem;
+        background-color: #fff;
+        color: #192441;
+        border: none;
+        cursor: pointer;
+        transition: all 300ms;
+        font-weight: 600;
+        font-size: 0.9rem;
+    }
+
+        .form .submit:hover {
+            background-color: #white color: var(--bg-dark);
+        }
+
+    .span {
+        text-decoration: none;
+        color: var(--bg-dark);
+    }
+
+        .span a {
+            color: #white
+        }
+
+    article.content.px-4 {
+        display: flex;
+        justify-content: center;
+        margin-top: 30vh;
+    }
+
+    a.nav-link {
+        display: flex;
+        justify-content: center;
+    }
+</style>

@@ -1,0 +1,63 @@
+li {
+    color: #ffffff;
+    font-family: Roboto;
+}
+a {
+    font-family: Roboto;
+    color:#ffffff
+}
+    a:hover {
+        color: midnightblue;
+        font-family: Roboto;
+    }
+h1 {
+    font: Roboto;
+    font-family: Roboto;
+}
+p.tip {
+    font-family: Roboto;
+}
+
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #f0f2f5 !important;
+    color: #333;
+}
+
+h1, h2 {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    color: 0000;
+    margin-bottom: 20px;
+    color: white;
+}
+p.tip {
+    color: #192441 !important;
+}
+
+p.second-text {
+    color: #192441 !important;
+}
+h3 {
+    color: #f4f4f4;
+}
+h5.card-title {
+    color: #white;
+}
+p {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+a:hover {
+    color: #6161d4;
+}
+li:hover {
+    color: #6161d4;
+}

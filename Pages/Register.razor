@@ -1,0 +1,143 @@
+﻿@page "/Register"
+@using System.Net.Http.Json
+@using IUR_Backend.Models.Dto.StudentDto
+@inject HttpClient Http
+@inject NavigationManager NavigationManager
+
+<EditForm Model="@NewStudent" OnValidSubmit="StudentRegistration">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="form">
+        <div class="input-span">
+            <label for="firstname" class="label">Firstname</label>
+            <InputText type="text" id="firstname" @bind-Value="NewStudent.FirstName" />
+            <ValidationMessage For="@(() => NewStudent.FirstName)" />
+        </div>
+        <div class="input-span">
+            <label for="lastname" class="label">Lastname</label>
+            <InputText type="text" id="lastname" @bind-Value="NewStudent.LastName" />
+            <ValidationMessage For="@(() => NewStudent.LastName)" />
+        </div>
+        <div class="input-span">
+            <label for="email" class="label">Email</label>
+            <InputText type="email" id="email" @bind-Value="NewStudent.Email" />
+            <ValidationMessage For="@(() => NewStudent.Email)" />
+        </div>
+        <div class="input-span">
+            <label for="username" class="label">Username</label>
+            <InputText type="text" id="username" @bind-Value="NewStudent.UserName" />
+            <ValidationMessage For="@(() => NewStudent.UserName)" />
+        </div>
+        <div class="input-span">
+            <label for="password" class="label">Password</label>
+            <InputText type="password" id="password" @bind-Value="NewStudent.Password" />
+            <ValidationMessage For="@(() => NewStudent.Password)" />
+        </div>
+        <div class="input-span">
+            <label for="confirm-password" class="label">Confirm Password</label>
+            <InputText type="password" id="confirm-password" @bind-Value="ConfirmPassword" />
+            <ValidationMessage For="@(() => ConfirmPassword)" />
+        </div>
+        @if (!string.IsNullOrEmpty(ErrorMessage))
+        {
+            <div class="validation-summary">
+                @ErrorMessage
+            </div>
+        }
+        <button type="submit" class="btn btn-primary">Register</button>
+    </div>
+</EditForm>
+
+@code {
+    private StudentDto NewStudent = new StudentDto();
+    private string ConfirmPassword { get; set; }
+    private string ErrorMessage { get; set; }
+
+    private async Task StudentRegistration()
+    {
+        if (NewStudent.Password != ConfirmPassword)
+        {
+            ErrorMessage = "Passwords do not match.";
+            return;
+        }
+
+        var response = await Http.PostAsJsonAsync("api/register", NewStudent);
+        if (response.IsSuccessStatusCode)
+        {
+            NavigationManager.NavigateTo("/");
+        }
+        else
+        {
+            var errorMessage = await response.Content.ReadAsStringAsync();
+            ErrorMessage = $"Registration failed: {errorMessage}";
+        }
+    }
+}
+
+<style>
+    .validation-message {
+        color: red;
+        font-size: 0.875rem;
+    }
+
+    .form {
+        margin-top: 13vh;
+        margin-left: 84vh;
+        background-color: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        padding: 2rem;
+        width: 100%;
+        max-width: 360px;
+    }
+
+    .input-span {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .label {
+        color: #333;
+        font-weight: 600;
+    }
+
+    .form input {
+        border-radius: 0.5rem;
+        padding: 1rem;
+        width: 100%;
+        border: 1px solid #ddd;
+        background-color: #f9f9f9;
+        color: #333;
+        outline: none;
+    }
+
+        .form input:focus {
+            border-color: #58bc82;
+        }
+
+    .btn-primary {
+        padding: 1rem 0.75rem;
+        width: 100%;
+        border-radius: 3rem;
+        background-color: #192441;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        font-weight: 600;
+        font-size: 0.9rem;
+    }
+
+    .validation-summary {
+        color: red;
+        margin-top: 1rem;
+        font-size: 0.875rem;
+    }
+</style>

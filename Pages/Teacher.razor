@@ -1,0 +1,76 @@
+﻿@page "/Teachers"
+@using IUR.Models
+<PageTitle>Teachers</PageTitle>
+
+<div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
+    @for (int t = 0; t < TeachersList.Count; t++)
+    {
+        <div class="col">
+            <div class="card h-100">
+                <img src="@GetImageSource(t)" class="card-img-top" alt="Teacher Image">
+                <div class="card-body">
+                    <h5 class="card-title">@TeachersList[t].Name @TeachersList[t].Lastname</h5>
+                    <p class="card-text">@TeachersList[t].Specialist</p>
+                    <p class="card-text">@TeachersList[t].Email</p>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+@code {
+    private string GetImageSource(int t)
+    {
+        return $"/img/t-{t}.jpg";
+    }
+
+    List<TeacherDto> TeachersList { get; set; } = new()
+    {
+       
+    };
+}
+
+<style>
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2rem;
+        margin-top: 5vh;
+        margin-left: 0;
+    }
+
+    .card {
+        transition: transform 0.3s ease;
+        border: none;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+    .card-title {
+        font-family: 'Roboto', sans-serif;
+        font-weight: 700;
+        font-size: 1.25em;
+        color: #192441;
+        margin-bottom: 0.5rem;
+    }
+
+    .card-text {
+        font-family: 'Roboto', sans-serif;
+        font-weight: 400;
+        font-size: 1em;
+        color: #192441;
+        margin-bottom: 0.25rem;
+    }
+
+    .card-img-top {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        max-height: 346px;
+        border-top-right-radius: -33px;
+    }
+</style>

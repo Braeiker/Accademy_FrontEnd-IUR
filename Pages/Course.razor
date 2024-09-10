@@ -1,0 +1,99 @@
+﻿@page "/Course"
+@using IUR_Backend.Models.Dto.CourseDto
+@inject HttpClient Http
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<div class="container-card">
+    <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+            <form class="d-flex" role="search" onsubmit="return false;">
+                <input class="form-control me-2" type="search" placeholder="Search courses"
+                       aria-label="Search courses" @bind="searchTerm" @bind:event="oninput">
+                <button class="btn btn-outline-success" type="button" @onclick="FilterCourses">Search</button>
+            </form>
+        </div>
+    </nav>
+
+    <div class="course-list mt-3">
+        @if (filteredCourses != null && filteredCourses.Any())
+        {
+            <ul class="list-group">
+                @foreach (var course in filteredCourses)
+                {
+                    <li class="list-group-item">@course.Name</li>
+                }
+            </ul>
+        }
+        else
+        {
+            <p>No courses found.</p>
+        }
+    </div>
+</div>
+
+@code {
+    private List<CourseDto> courseHome = new List<CourseDto>();
+    private List<CourseDto> filteredCourses = new List<CourseDto>();
+    private string searchTerm = string.Empty;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            courseHome = await Http.GetFromJsonAsync<List<CourseDto>>("api/courses");
+            filteredCourses = courseHome; 
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error fetching courses: {ex.Message}");
+        }
+    }
+
+    private void FilterCourses()
+    {
+        if (string.IsNullOrWhiteSpace(searchTerm))
+        {
+            filteredCourses = courseHome; // Reset to all courses if search is empty
+        }
+        else
+        {
+            filteredCourses = courseHome
+                .Where(c => c.Name.Contains(searchTerm, StringComparison.OrdinalIgnoreCase))
+                .ToList();
+        }
+    }
+}
+
+<style>
+    .navbar .container-fluid {
+        display: flex;
+        margin-top: 22vh;
+        flex-wrap: inherit;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .btn-outline-success {
+        color: darkblue;
+        border-color: darkblue;
+    }
+
+        .btn-outline-success:hover {
+            background-color: darkblue;
+            color: white;
+        }
+
+    .container-card {
+        padding: 20px;
+    }
+
+    .course-list {
+        text-align: center;
+    }
+
+    .list-group-item {
+        text-align: left;
+        cursor: pointer;
+    }
+</style>

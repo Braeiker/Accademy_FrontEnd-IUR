@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\img\t-0.jpg" />
+    <None Include="wwwroot\img\t-1.jpg" />
+    <None Include="wwwroot\img\t-2.jpg" />
+    <None Include="wwwroot\img\t-4.jpg" />
+    <None Include="wwwroot\img\t-3.jpg" />
+    <None Include="wwwroot\img\university.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="8.0.7" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="8.0.7" PrivateAssets="all" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\img\PROFESSORI\" />
+    <Folder Include="wwwroot\sample-data\" />
+  </ItemGroup>
+
+</Project>

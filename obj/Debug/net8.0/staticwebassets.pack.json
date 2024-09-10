@@ -1,0 +1,101 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\stantill\\OneDrive - NTT DATA EMEAL\\Desktop\\C#\\Blazor\\IUR\\IUR\\bin\\Debug\\net8.0\\wwwroot\\_framework\\blazor.webassembly.js",
+      "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js"
+    },
+    {
+      "Id": "C:\\Users\\stantill\\OneDrive - NTT DATA EMEAL\\Desktop\\C#\\Blazor\\IUR\\IUR\\obj\\Debug\\net8.0\\compressed\\qork5vk2yr.gz",
+      "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js.gz"
+    },
+    {
+      "Id": "C:\\Users\\stantill\\OneDrive - NTT DATA EMEAL\\Desktop\\C#\\Blazor\\IUR\\IUR\\obj\\Debug\\net8.0\\scopedcss\\bundle\\IUR.styles.css",
+      "PackagePath": "staticwebassets\\IUR.styles.css"
+    },
+    {
+      "Id": "C:\\Users\\stantill\\OneDrive - NTT DATA EMEAL\\Desktop\\C#\\Blazor\\IUR\\IUR\\wwwroot\\css\\app.css",
+      "PackagePath": "staticwebassets\\css\\app.css"
+    },
+    {
+      "Id": "C:\\Users\\stantill\\OneDrive - NTT DATA EMEAL\\Desktop\\C#\\Blazor\\IUR\\IUR\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\stantill\\OneDrive - NTT DATA EMEAL\\Desktop\\C#\\Blazor\\IUR\\IUR\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\stantill\\OneDrive - NTT DATA EMEAL\\Desktop\\C#\\Blazor\\IUR\\IUR\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "C:\\Users\\stantill\\OneDrive - NTT DATA EMEAL\\Desktop\\C#\\Blazor\\IUR\\IUR\\wwwroot\\icon-192.png",
+      "PackagePath": "staticwebassets\\icon-192.png"
+    },
+    {
+      "Id": "C:\\Users\\stantill\\OneDrive - NTT DATA EMEAL\\Desktop\\C#\\Blazor\\IUR\\IUR\\wwwroot\\img\\logo nero (1).png",
+      "PackagePath": "staticwebassets\\img\\logo nero (1).png"
+    },
+    {
+      "Id": "C:\\Users\\stantill\\OneDrive - NTT DATA EMEAL\\Desktop\\C#\\Blazor\\IUR\\IUR\\wwwroot\\img\\logobianco.png",
+      "PackagePath": "staticwebassets\\img\\logobianco.png"
+    },
+    {
+      "Id": "C:\\Users\\stantill\\OneDrive - NTT DATA EMEAL\\Desktop\\C#\\Blazor\\IUR\\IUR\\wwwroot\\img\\logobiancoblu.png",
+      "PackagePath": "staticwebassets\\img\\logobiancoblu.png"
+    },
+    {
+      "Id": "C:\\Users\\stantill\\OneDrive - NTT DATA EMEAL\\Desktop\\C#\\Blazor\\IUR\\IUR\\wwwroot\\img\\logoblu.png",
+      "PackagePath": "staticwebassets\\img\\logoblu.png"
+    },
+    {
+      "Id": "C:\\Users\\stantill\\OneDrive - NTT DATA EMEAL\\Desktop\\C#\\Blazor\\IUR\\IUR\\wwwroot\\img\\t-0.jpg",
+      "PackagePath": "staticwebassets\\img\\t-0.jpg"
+    },
+    {
+      "Id": "C:\\Users\\stantill\\OneDrive - NTT DATA EMEAL\\Desktop\\C#\\Blazor\\IUR\\IUR\\wwwroot\\img\\t-1.jpg",
+      "PackagePath": "staticwebassets\\img\\t-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\stantill\\OneDrive - NTT DATA EMEAL\\Desktop\\C#\\Blazor\\IUR\\IUR\\wwwroot\\img\\t-2.jpg",
+      "PackagePath": "staticwebassets\\img\\t-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\stantill\\OneDrive - NTT DATA EMEAL\\Desktop\\C#\\Blazor\\IUR\\IUR\\wwwroot\\img\\t-3.jpg",
+      "PackagePath": "staticwebassets\\img\\t-3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\stantill\\OneDrive - NTT DATA EMEAL\\Desktop\\C#\\Blazor\\IUR\\IUR\\wwwroot\\img\\t-4.jpg",
+      "PackagePath": "staticwebassets\\img\\t-4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\stantill\\OneDrive - NTT DATA EMEAL\\Desktop\\C#\\Blazor\\IUR\\IUR\\wwwroot\\img\\t-5.jpg",
+      "PackagePath": "staticwebassets\\img\\t-5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\stantill\\OneDrive - NTT DATA EMEAL\\Desktop\\C#\\Blazor\\IUR\\IUR\\wwwroot\\img\\university.jpg",
+      "PackagePath": "staticwebassets\\img\\university.jpg"
+    },
+    {
+      "Id": "C:\\Users\\stantill\\OneDrive - NTT DATA EMEAL\\Desktop\\C#\\Blazor\\IUR\\IUR\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.IUR.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.IUR.props",
+      "PackagePath": "build\\IUR.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.IUR.props",
+      "PackagePath": "buildMultiTargeting\\IUR.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.IUR.props",
+      "PackagePath": "buildTransitive\\IUR.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
